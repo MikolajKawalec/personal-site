@@ -1,7 +1,10 @@
 import Header from './components/large_components/header';
-import SkillDongle from './components/smaller_components/skill_dongle';
+// import SkillDongle from './components/smaller_components/skill_dongle';
 import { ThemeProvider } from './components/theme-provider';
-import cppLogo from './assets/cpp_logo.png';
+
+import { TypeAnimation } from 'react-type-animation';
+import { ArrowDown } from 'lucide-react';
+import { Separator } from './components/ui/separator';
 
 function App() {
   return (
@@ -10,51 +13,43 @@ function App() {
       storageKey="vite-ui-theme"
     >
       <div className="bg-background flex flex-col min-h-screen max-w-4xl mx-auto gap-y-4">
-        <div className="min-h-screen bg-yellow-500 relative">
+        <div className="flex flex-col min-h-screen">
           <Header />
-          {/* ideas for the thins on the right of it */}
-          {/* left container div */}
-          <div className="absolute inset-y-0 left-0 w-60 bg-red-700 flex flex-col justify-around gap-y-12">
-            <div className="bg-accent flex flex-row-reverse justify-between h-20 py-2 px-1 align-middle rounded-r-2xl w-40">
-              <img
-                loading="lazy"
-                src={cppLogo}
-                alt={'c++'}
-                className="w-8 h-8 rounded-full border-2"
-              />
-              <b>C++</b>
-              <div></div>
-            </div>
+          <div className="flex-1 flex flex-col justify-center items text-center gap-y-12">
+            <h2 className="text-9xl font-extrabold">Hi I'm</h2>
+            <h2 className="text-9xl font-extrabold">Mikołaj</h2>
+            <h2 className="text-9xl font-extrabold text-primary">Kawalec</h2>
           </div>
-          {/* gradient overlay div */}
-
-          {/* <SkillDongle
-            bIsLeft={false}
-            numberInLine={0}
-            imagePath={cppLogo}
-            imageAlt="c++"
-            text="C++"
-          />
-          <SkillDongle
-            bIsLeft={false}
-            numberInLine={1}
-            imagePath={cppLogo}
-            imageAlt="c++"
-            text="C++"
-          /> */}
-
-          <div className="absolute right-1 bottom-8 min-w-32 min-h-6 -rotate-12 bg-slate-600 rounded-l-3xl p-2">
-            unreal engine
+          <div className="flex-[0.25] flex flex-col justify-center items-center text-center font-semibold text-6xl">
+            <TypeAnimation
+              preRenderFirstString={true}
+              sequence={[
+                1000,
+                'Game Developer',
+                1000,
+                'Frontend Developer',
+                1000,
+                'Backend Developer',
+                1000,
+                'Student',
+                1000,
+              ]}
+              speed={50}
+              repeat={Infinity}
+            />
           </div>
-          <div className="absolute right-1 bottom-20 min-w-32 min-h-6 -rotate-12 bg-slate-600 rounded-l-3xl p-2">
-            C++
+          <div className="flex-[0.25] flex flex-col justify-center items-center">
+            <a href="#skills">
+              <ArrowDown size={64} />
+            </a>
           </div>
-
-          {/* how to make them hide on the right */}
-          <div className="absolute min-h-screen w-4 bg-teal-700 right-0 z-10"></div>
         </div>
-
-        <div className="min-h-screen bg-red-500 relative"></div>
+        {/* separator does not seem to work */}
+        <Separator />
+        <div
+          id="skills"
+          className="min-h-screen bg-red-500 relative"
+        ></div>
       </div>
     </ThemeProvider>
   );
