@@ -9,6 +9,8 @@ import LargeHeading from './components/smaller_components/large_heading';
 
 import { SkillLevel } from './lib/helpers';
 import SkillWrapper from './components/smaller_components/skill_wrapper';
+import MinorSkill from './components/smaller_components/minor_skill_badge';
+import MinorSkillText from './components/smaller_components/minor_skill_text';
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
           <div className="flex-1 flex flex-col justify-center items text-center gap-y-12">
             <h2 className="text-9xl font-extrabold">Hi I'm</h2>
             <h2 className="text-9xl font-extrabold">Mikołaj</h2>
-            <h2 className="text-9xl font-extrabold text-primary">Kawalec</h2>
+            <h2 className="text-9xl font-extrabold text-primary hover:scale-110 hover:text-accent transition-all duration-500 ease-in-out">
+              Kawalec
+            </h2>
           </div>
           <div className="flex-[0.25] flex flex-col justify-center items-center text-center font-semibold text-6xl">
             <TypeAnimation
@@ -43,8 +47,15 @@ function App() {
             />
           </div>
           <div className="flex-[0.25] flex flex-col justify-center items-center">
-            <a href="#skills">
-              <ArrowDown size={64} />
+            <a
+              href="#skills"
+              className="
+            hover:scale-125 transition-all duration-300 ease-in-out group"
+            >
+              <ArrowDown
+                size={96}
+                className="group-hover:stroke-primary"
+              />
             </a>
           </div>
         </div>
@@ -55,14 +66,54 @@ function App() {
           className="min-h-screen flex flex-col items-center"
         >
           <LargeHeading>Skills</LargeHeading>
-          <SkillWrapper
-            skill="JavaScript"
-            level={SkillLevel['Semi-Advanced']}
-          />
-          <SkillWrapper
-            skill="TypeScript"
-            level={SkillLevel.Beginner}
-          />
+          <div className="w-full py-10">
+            <SkillWrapper
+              skill="C++"
+              level={SkillLevel['Semi-Advanced']}
+            />
+            <SkillWrapper
+              skill="Unreal Engine"
+              level={SkillLevel['Semi-Advanced']}
+            />
+            <SkillWrapper
+              skill="Typescript"
+              level={SkillLevel['Semi-Advanced']}
+            />
+            <SkillWrapper
+              skill="React"
+              level={SkillLevel['Semi-Advanced']}
+            />
+            <SkillWrapper
+              skill="Next.js"
+              level={SkillLevel['Semi-Advanced']}
+            />
+            <SkillWrapper
+              skill="Java"
+              level={SkillLevel['Semi-Advanced']}
+            />
+            <SkillWrapper
+              skill="Python"
+              level={SkillLevel['Semi-Advanced']}
+            />
+            <SkillWrapper
+              skill="API"
+              level={SkillLevel.Beginner}
+            />
+          </div>
+          <div className="grid grid-cols-5 w-full">
+            <MinorSkillText>REST</MinorSkillText>
+            <MinorSkillText>GraphQL</MinorSkillText>
+            <MinorSkillText>SQL</MinorSkillText>
+            <MinorSkillText>HTML</MinorSkillText>
+            <MinorSkillText>CSS</MinorSkillText>
+            <MinorSkillText>SCSS</MinorSkillText>
+            <MinorSkillText>JS</MinorSkillText>
+            <MinorSkillText>Node.js</MinorSkillText>
+            <MinorSkillText>Express.js</MinorSkillText>
+            <MinorSkillText>Git</MinorSkillText>
+            <MinorSkillText>Linux</MinorSkillText>
+            <MinorSkillText>Windows</MinorSkillText>
+          </div>
         </div>
       </div>
     </ThemeProvider>
