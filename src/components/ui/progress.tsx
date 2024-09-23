@@ -3,10 +3,15 @@ import * as ProgressPrimitive from '@radix-ui/react-progress';
 
 import { cn } from '@/lib/utils';
 
+interface ProgressProps
+  extends React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> {
+  label?: string;
+}
+
 const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
->(({ className, value, ...props }, ref) => (
+  ProgressProps
+>(({ className, value, label, ...props }, ref) => (
   <ProgressPrimitive.Root
     ref={ref}
     className={cn(
@@ -20,7 +25,7 @@ const Progress = React.forwardRef<
       style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
     />
     <b className="opacity-0 group-hover:opacity-100 flex text-center w-full justify-center items-center absolute inset-0 transition-opacity duration-300 ease-in-out">
-      {value}
+      {label}
     </b>
   </ProgressPrimitive.Root>
 ));
