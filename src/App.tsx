@@ -102,19 +102,28 @@ function App() {
               level={SkillLevel.Beginner}
             />
           </div>
-          <div className="grid grid-cols-5 w-full">
-            <MinorSkillText>REST</MinorSkillText>
-            <MinorSkillText>GraphQL</MinorSkillText>
+          <div className="grid grid-cols-7 w-full">
+            <MinorSkillText>C</MinorSkillText>
+            <MinorSkillText>CSS</MinorSkillText>
+            <MinorSkillText>Tailwind CSS</MinorSkillText>
             <MinorSkillText>SQL</MinorSkillText>
             <MinorSkillText>HTML</MinorSkillText>
-            <MinorSkillText>CSS</MinorSkillText>
-            <MinorSkillText>SCSS</MinorSkillText>
-            <MinorSkillText>JS</MinorSkillText>
-            <MinorSkillText>Node.js</MinorSkillText>
-            <MinorSkillText>Express.js</MinorSkillText>
-            <MinorSkillText>Git</MinorSkillText>
+            <MinorSkillText>Databases</MinorSkillText>
+            <MinorSkillText>Oracle SQL</MinorSkillText>
+            <MinorSkillText>PostgresSQL</MinorSkillText>
+            <MinorSkillText>Fast API</MinorSkillText>
+            <MinorSkillText>Unity</MinorSkillText>
+            <MinorSkillText>FLutter</MinorSkillText>
+            <MinorSkillText>Dart</MinorSkillText>
             <MinorSkillText>Linux</MinorSkillText>
-            <MinorSkillText>Windows</MinorSkillText>
+            <MinorSkillText>UI/UX</MinorSkillText>
+            <MinorSkillText>Design</MinorSkillText>
+            <MinorSkillText>Algorithms</MinorSkillText>
+            <MinorSkillText>Testing</MinorSkillText>
+            <MinorSkillText>MS Office</MinorSkillText>
+            <MinorSkillText>Math</MinorSkillText>
+            <MinorSkillText>Physics</MinorSkillText>
+            <MinorSkillText>Econ</MinorSkillText>
           </div>
         </div>
         <Separator />

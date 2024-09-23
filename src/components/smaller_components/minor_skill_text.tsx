@@ -7,7 +7,16 @@ interface MinorSkillTextProps
 
 const MinorSkillText: FC<MinorSkillTextProps> = ({ className, children }) => {
   return (
-    <p className={cn('px-6 py-4 text-muted text-2xl', className)}>{children}</p>
+    <div className="flex items-center justify-center h-full group">
+      <p
+        className={cn(
+          'px-6 py-4 text-muted text-2xl text-center   group-hover:scale-110 group-hover:text-primary transition-all duration-300 ease-in-out',
+          className
+        )}
+      >
+        {children}
+      </p>
+    </div>
   );
 };
 
