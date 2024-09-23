@@ -5,6 +5,10 @@ import { ThemeProvider } from './components/theme-provider';
 import { TypeAnimation } from 'react-type-animation';
 import { ArrowDown } from 'lucide-react';
 import { Separator } from './components/ui/separator';
+import LargeHeading from './components/smaller_components/large_heading';
+
+import { SkillLevel } from './lib/helpers';
+import SkillWrapper from './components/smaller_components/skill_wrapper';
 
 function App() {
   return (
@@ -48,8 +52,18 @@ function App() {
         <Separator />
         <div
           id="skills"
-          className="min-h-screen bg-red-500 relative"
-        ></div>
+          className="min-h-screen flex flex-col items-center"
+        >
+          <LargeHeading>Skills</LargeHeading>
+          <SkillWrapper
+            skill="JavaScript"
+            level={SkillLevel['Semi-Advanced']}
+          />
+          <SkillWrapper
+            skill="TypeScript"
+            level={SkillLevel.Beginner}
+          />
+        </div>
       </div>
     </ThemeProvider>
   );

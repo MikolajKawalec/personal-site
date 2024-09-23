@@ -54,6 +54,8 @@ export default {
       backgroundImage: {
         'left-to-right-gradient':
           'linear-gradient(90deg, hsla(var(--background), 1) 20%, hsla(var(--background), 0) 100%)',
+        stripes:
+          'repeating-linear-gradient( 45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px)',
       },
     },
   },
