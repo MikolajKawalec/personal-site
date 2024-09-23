@@ -9,14 +9,12 @@ interface SkillBarProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const SkillBar: FC<SkillBarProps> = ({ level, className }) => {
-  //   const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(0);
 
-  //   useEffect(() => {
-  //     const timer = setTimeout(() => setAmount(level), 500);
-  //     return () => clearTimeout(timer);
-  //   }, []);
-
-  const amount = 30;
+  useEffect(() => {
+    const timer = setTimeout(() => setAmount(level), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Progress
