@@ -7,11 +7,7 @@ interface MinorSkillTextProps
 
 const MinorSkillText: FC<MinorSkillTextProps> = ({ className, children }) => {
   return (
-    <p
-      className={cn('px-6 py-4 text-muted brightness-150 text-2xl', className)}
-    >
-      {children}
-    </p>
+    <p className={cn('px-6 py-4 text-muted text-2xl', className)}>{children}</p>
   );
 };
 

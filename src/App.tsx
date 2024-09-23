@@ -3,14 +3,16 @@ import Header from './components/large_components/header';
 import { ThemeProvider } from './components/theme-provider';
 
 import { TypeAnimation } from 'react-type-animation';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Github, Mail, Phone } from 'lucide-react';
 import { Separator } from './components/ui/separator';
 import LargeHeading from './components/smaller_components/large_heading';
 
 import { SkillLevel } from './lib/helpers';
 import SkillWrapper from './components/smaller_components/skill_wrapper';
-import MinorSkill from './components/smaller_components/minor_skill_badge';
 import MinorSkillText from './components/smaller_components/minor_skill_text';
+import UniInformation from './components/smaller_components/uni_information';
+import Contact from './components/smaller_components/contact';
+import Footer from './components/large_components/footer';
 
 function App() {
   return (
@@ -63,7 +65,7 @@ function App() {
         <Separator />
         <div
           id="skills"
-          className="min-h-screen flex flex-col items-center"
+          className="min-h-screen flex flex-col items-center justify-between py-2"
         >
           <LargeHeading>Skills</LargeHeading>
           <div className="w-full py-10">
@@ -115,6 +117,64 @@ function App() {
             <MinorSkillText>Windows</MinorSkillText>
           </div>
         </div>
+        <Separator />
+        <div
+          id="education"
+          className="min-h-screen flex flex-col items-center justify-between py-2"
+        >
+          <LargeHeading>Education</LargeHeading>
+          <UniInformation
+            name="Polsko-Japońska Akademia Technik Komputerowych"
+            studies="Computer Science"
+            years="2023-2026"
+          />
+          <UniInformation
+            name="Szkoła Glówna Handlowa"
+            studies="Ekonomia"
+            years="2023-2024"
+          />
+          <UniInformation
+            name="University of Toronto"
+            studies="Mathematics and Computer Science"
+            years="2021-2022"
+          />
+        </div>
+        <Separator />
+        <div
+          id="experience"
+          className="flex flex-col items-center py-2"
+        >
+          <LargeHeading>Experience</LargeHeading>
+          <UniInformation
+            name="Samsung Reasearch and Development"
+            studies="ETS intern"
+            years="2023"
+            className="mt-10"
+          />
+        </div>
+        <Separator />
+        <div
+          id="contact"
+          className="flex flex-col items-center py-2"
+        >
+          <LargeHeading>Contact</LargeHeading>
+          <div className="flex flex-row w-full justify-between items-center min-h-32">
+            <Contact
+              Icon={Phone}
+              text="+48-727-555-580"
+            />
+            <Contact
+              Icon={Mail}
+              text="mikolaj.kawalec@gmail.com"
+            />
+            <Contact
+              Icon={Github}
+              text="MikolajKawalec"
+              linkTo="https://github.com/MikolajKawalec"
+            />
+          </div>
+        </div>
+        <Footer />
       </div>
     </ThemeProvider>
   );
