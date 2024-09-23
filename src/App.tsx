@@ -98,7 +98,7 @@ function App() {
               level={SkillLevel['Semi-Advanced']}
             />
             <SkillWrapper
-              skill="API"
+              skill="REST API"
               level={SkillLevel.Beginner}
             />
           </div>
@@ -113,7 +113,7 @@ function App() {
             <MinorSkillText>PostgresSQL</MinorSkillText>
             <MinorSkillText>Fast API</MinorSkillText>
             <MinorSkillText>Unity</MinorSkillText>
-            <MinorSkillText>FLutter</MinorSkillText>
+            <MinorSkillText>Flutter</MinorSkillText>
             <MinorSkillText>Dart</MinorSkillText>
             <MinorSkillText>Linux</MinorSkillText>
             <MinorSkillText>UI/UX</MinorSkillText>
