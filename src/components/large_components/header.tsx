@@ -5,7 +5,7 @@ const className =
 
 const Header = () => {
   return (
-    <div className="flex flex-row justify-between items-center border-b-2    p-2">
+    <div className="flex flex-row justify-between items-center border-b-2 p-2 sticky top-0 bg-background z-50 h-16">
       <ModeToggle />
       <div className="flex flex-row justify-between gap-x-6">
         <a

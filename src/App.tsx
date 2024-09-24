@@ -13,6 +13,7 @@ import MinorSkillText from './components/smaller_components/minor_skill_text';
 import UniInformation from './components/smaller_components/uni_information';
 import Contact from './components/smaller_components/contact';
 import Footer from './components/large_components/footer';
+import ThemeChecker from './components/large_components/theme_checker';
 
 function App() {
   return (
@@ -21,12 +22,12 @@ function App() {
       storageKey="vite-ui-theme"
     >
       <div className="bg-background flex flex-col min-h-screen max-w-4xl mx-auto gap-y-4">
-        <div className="flex flex-col min-h-screen">
-          <Header />
+        <Header />
+        <div className="flex flex-col min-h-[calc(100vh-4rem)]">
           <div className="flex-1 flex flex-col justify-center items text-center gap-y-12">
             <h2 className="text-9xl font-extrabold">Hi I'm</h2>
             <h2 className="text-9xl font-extrabold">Mikołaj</h2>
-            <h2 className="text-9xl font-extrabold text-primary hover:scale-110 hover:text-accent transition-all duration-500 ease-in-out">
+            <h2 className="text-9xl font-extrabold text-accent hover:scale-110 transition-all duration-500 ease-in-out">
               Kawalec
             </h2>
           </div>
@@ -183,6 +184,8 @@ function App() {
             />
           </div>
         </div>
+        <Separator />
+        <ThemeChecker />
         <Footer />
       </div>
     </ThemeProvider>

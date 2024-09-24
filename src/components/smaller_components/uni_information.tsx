@@ -20,7 +20,7 @@ const UniInformation: FC<UniInformationProps> = ({
       {...props}
     >
       <h3 className="text-5xl">{name}</h3>
-      <h4 className="text-3xl">{studies}</h4>
+      <h4 className="text-3xl text-primary">{studies}</h4>
       <h4 className="text-xl">{years}</h4>
     </div>
   );

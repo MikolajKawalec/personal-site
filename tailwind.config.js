@@ -55,7 +55,7 @@ export default {
         'left-to-right-gradient':
           'linear-gradient(90deg, hsla(var(--background), 1) 20%, hsla(var(--background), 0) 100%)',
         stripes:
-          'repeating-linear-gradient( 45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px)',
+          'repeating-linear-gradient( 45deg, hsl(var(--primary)), hsl(var(--primary)) 10px, hsla(var(--secondary), 1) 10px, hsla(var(--secondary), 1) 20px)',
       },
     },
   },
