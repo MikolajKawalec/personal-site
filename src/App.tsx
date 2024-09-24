@@ -13,7 +13,7 @@ import MinorSkillText from './components/smaller_components/minor_skill_text';
 import UniInformation from './components/smaller_components/uni_information';
 import Contact from './components/smaller_components/contact';
 import Footer from './components/large_components/footer';
-import ThemeChecker from './components/large_components/theme_checker';
+// import ThemeChecker from './components/large_components/theme_checker';
 
 function App() {
   return (
