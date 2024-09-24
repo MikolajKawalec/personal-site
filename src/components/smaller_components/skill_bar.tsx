@@ -1,7 +1,7 @@
-import { FC, useState, useEffect } from 'react';
-import { Progress } from '../ui/progress';
-import { SkillLevel } from '@/lib/helpers';
-import { cn } from '@/lib/utils';
+import { FC, useState, useEffect } from "react";
+import { Progress } from "../ui/progress";
+import { SkillLevel } from "@/lib/helpers";
+import { cn } from "@/lib/utils";
 
 // see dict above for values what is small medium, etc..
 interface SkillBarProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -20,7 +20,7 @@ const SkillBar: FC<SkillBarProps> = ({ level, className }) => {
     <Progress
       value={amount}
       label={SkillLevel[level]}
-      className={cn('border-2 rounded-full min-h-8 bg-primary/20', className)}
+      className={cn("min-h-8 rounded-full border-2 bg-primary/20", className)}
     />
   );
 };

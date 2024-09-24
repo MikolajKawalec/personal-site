@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils';
-import { FC } from 'react';
+import { cn } from "@/lib/utils";
+import { FC } from "react";
 
 interface ColorCheckProps extends React.HTMLAttributes<HTMLDivElement> {
   cssClass: string;
@@ -7,13 +7,13 @@ interface ColorCheckProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const ColorCheck: FC<ColorCheckProps> = ({ cssClass, className }) => {
   const completeCSS =
-    'p-6 rounded-full border-4 ' +
-    'bg-' +
+    "p-6 rounded-full border-4 " +
+    "bg-" +
     cssClass +
-    ' ' +
-    'text-' +
+    " " +
+    "text-" +
     cssClass +
-    '-foreground';
+    "-foreground";
   console.log(completeCSS);
   return <div className={cn(completeCSS, className)}>{cssClass}</div>;
 };
