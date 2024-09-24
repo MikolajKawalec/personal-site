@@ -132,8 +132,8 @@ function App() {
               />
             </div>
           </div>
-          <Separator />
-          <b>major fix 3</b>
+          {/* <Separator />
+          <b>major fix 3</b> */}
           {/* <ThemeChecker /> */}
         </div>
         <Footer />
