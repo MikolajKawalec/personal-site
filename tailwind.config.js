@@ -57,6 +57,9 @@ export default {
         stripes:
           'repeating-linear-gradient( 45deg, hsl(var(--primary)), hsl(var(--primary)) 10px, hsla(var(--secondary), 1) 10px, hsla(var(--secondary), 1) 20px)',
       },
+      fontFamily: {
+        sans: ['JetBrains Mono NL', 'sans-serif'],
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],

@@ -184,8 +184,8 @@ function App() {
             />
           </div>
         </div>
-        <Separator />
-        <ThemeChecker />
+        {/* <Separator /> */}
+        {/* <ThemeChecker /> */}
         <Footer />
       </div>
     </ThemeProvider>
