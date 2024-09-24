@@ -4,7 +4,7 @@
 @layer base {
   * {
     scroll-behavior: smooth;
-    scroll-padding-top: 64px;
+    scroll-padding-top: 4rem;
   }
   :root {
     --background: 328, 30%, 92%;
