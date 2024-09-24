@@ -12,7 +12,7 @@ const LargeHeading: FC<LargeHeadingProps> = ({
   return (
     <div className="flex flex-row justify-center items-center py-4">
       <h2
-        className={cn('text-7xl font-bold', className)}
+        className={cn('text-5xl xl:text-7xl font-bold', className)}
         {...props}
       >
         {children}
