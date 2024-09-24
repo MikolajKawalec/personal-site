@@ -62,5 +62,9 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('postcss-100vh-fix'),
+    require('autoprefixer'),
+  ],
 };

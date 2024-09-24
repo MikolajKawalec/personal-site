@@ -21,7 +21,7 @@ function App() {
       defaultTheme="dark"
       storageKey="vite-ui-theme"
     >
-      <div className="bg-background flex flex-col min-h-screen w-fit xl:max-w-4xl mx-auto gap-y-4">
+      <div className="bg-background flex flex-col min-h-[calc(100vh)] w-fit xl:max-w-4xl mx-auto gap-y-4">
         <Header />
         <div className="px-2 xl:px-0">
           <div className="flex flex-col min-h-[calc(100vh-4rem)]">
@@ -67,7 +67,7 @@ function App() {
           <Separator />
           <div
             id="skills"
-            className="min-h-screen flex flex-col items-center justify-between py-2"
+            className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-between py-2"
           >
             <LargeHeading>Skills</LargeHeading>
             <div className="w-full py-10">
@@ -131,7 +131,7 @@ function App() {
           <Separator />
           <div
             id="education"
-            className="min-h-screen flex flex-col items-center justify-between py-2"
+            className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-between py-2"
           >
             <LargeHeading>Education</LargeHeading>
             <UniInformation
@@ -169,7 +169,7 @@ function App() {
             className="flex flex-col items-center py-2"
           >
             <LargeHeading>Contact</LargeHeading>
-            <div className="flex flex-col xl:flex-row w-full justify-between items-center min-h-32">
+            <div className="flex flex-col gap-y-4 xl:flex-row w-full justify-between items-center min-h-32">
               <Contact
                 Icon={Phone}
                 text="+48-727-555-580"
@@ -185,7 +185,8 @@ function App() {
               />
             </div>
           </div>
-          {/* <Separator /> */}
+          <Separator />
+          <b>major fix 1</b>
           {/* <ThemeChecker /> */}
         </div>
         <Footer />

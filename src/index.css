@@ -8,6 +8,7 @@
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
   }
+
   :root {
     --background: 328, 30%, 92%;
     --foreground: 327, 58%, 4%;
@@ -69,11 +70,4 @@
   body {
     @apply bg-background text-foreground;
   }
-
-  /* div.anchor {
-    display: block;
-    position: relative;
-    top: -64px;
-    visibility: hidden;
-  } */
 }
