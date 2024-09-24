@@ -9,10 +9,10 @@ import LargeHeading from "./components/smaller_components/large_heading";
 
 import { SkillLevel } from "./lib/helpers";
 import SkillWrapper from "./components/smaller_components/skill_wrapper";
-import MinorSkillText from "./components/smaller_components/minor_skill_text";
 import UniInformation from "./components/smaller_components/uni_information";
 import Contact from "./components/smaller_components/contact";
 import Footer from "./components/large_components/footer";
+import MinorSkillWrapper from "./components/large_components/minor_skill_wrapper";
 // import ThemeChecker from './components/large_components/theme_checker';
 
 function App() {
@@ -85,29 +85,7 @@ function App() {
               />
               <SkillWrapper skill="REST API" level={SkillLevel.Beginner} />
             </div>
-            <div className="grid w-full grid-cols-3 xl:grid-cols-7">
-              <MinorSkillText>C</MinorSkillText>
-              <MinorSkillText>CSS</MinorSkillText>
-              <MinorSkillText>Tailwind CSS</MinorSkillText>
-              <MinorSkillText>SQL</MinorSkillText>
-              <MinorSkillText>HTML</MinorSkillText>
-              <MinorSkillText>Databases</MinorSkillText>
-              <MinorSkillText>Oracle SQL</MinorSkillText>
-              <MinorSkillText>PostgresSQL</MinorSkillText>
-              <MinorSkillText>Fast API</MinorSkillText>
-              <MinorSkillText>Unity</MinorSkillText>
-              <MinorSkillText>Flutter</MinorSkillText>
-              <MinorSkillText>Dart</MinorSkillText>
-              <MinorSkillText>Linux</MinorSkillText>
-              <MinorSkillText>UI/UX</MinorSkillText>
-              <MinorSkillText>Design</MinorSkillText>
-              <MinorSkillText>Algorithms</MinorSkillText>
-              <MinorSkillText>Testing</MinorSkillText>
-              <MinorSkillText>MS Office</MinorSkillText>
-              <MinorSkillText>Math</MinorSkillText>
-              <MinorSkillText>Physics</MinorSkillText>
-              <MinorSkillText>Econ</MinorSkillText>
-            </div>
+            <MinorSkillWrapper />
           </div>
           <Separator />
           <div
@@ -154,8 +132,8 @@ function App() {
               />
             </div>
           </div>
-          {/* <Separator />
-          <b>major fix 1</b> */}
+          <Separator />
+          <b>major fix 3</b>
           {/* <ThemeChecker /> */}
         </div>
         <Footer />
