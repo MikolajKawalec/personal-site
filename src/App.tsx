@@ -101,7 +101,7 @@ function App() {
             <UniInformation
               name="Szkoła Glówna Handlowa"
               studies="Ekonomia"
-              years="2023-2024"
+              years="2023-2026"
             />
             <UniInformation
               name="University of Toronto"
