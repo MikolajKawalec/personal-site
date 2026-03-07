@@ -8,7 +8,7 @@ const MinorSkillWrapper = () => {
 
   return (
     <div>
-      <div className="hidden w-full grid-cols-3 xl:grid xl:grid-cols-7">
+      <div className="hidden w-full grid-cols-3 xl:grid xl:grid-cols-6">
         {minorSkills.map((skill) => (
           <MinorSkillText key={skill}>{skill}</MinorSkillText>
         ))}
