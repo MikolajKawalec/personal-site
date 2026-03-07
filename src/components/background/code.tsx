@@ -813,7 +813,6 @@ export default function CodeBackground({
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre
             className={className}
-            // Strips the background color so your Vite app's background shows through
             style={{ ...style, backgroundColor: "transparent" }}
           >
             {tokens.map((line, i) => (
