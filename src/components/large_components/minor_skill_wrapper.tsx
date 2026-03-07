@@ -13,7 +13,7 @@ const MinorSkillWrapper = () => {
           <MinorSkillText key={skill}>{skill}</MinorSkillText>
         ))}
       </div>
-      <div className="flex flex-col flex-wrap justify-between gap-x-2 xl:hidden">
+      <div className="grid grid-cols-2 gap-x-2 gap-y-6 text-center sm:grid-cols-3 xl:hidden">
         {minorSkills.map((skill) => (
           <MinorSkillText key={skill}>{skill}</MinorSkillText>
         ))}

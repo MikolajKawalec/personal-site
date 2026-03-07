@@ -16,8 +16,10 @@ import MinorSkillWrapper from "./components/large_components/minor_skill_wrapper
 import { useTranslation } from "react-i18next";
 import ParticlesComponent from "./components/background/particles";
 
-import CodeBackground, { cppSample } from "./components/background/code";
-// import ThemeChecker from './components/large_components/theme_checker';
+import CodeBackground, {
+  googleTestSampleCPP,
+  sortingAlgorithmSampleCPP,
+} from "./components/background/code";
 
 function App() {
   const { t } = useTranslation();
@@ -42,30 +44,26 @@ function App() {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="bg-background relative mx-auto flex min-h-screen flex-row justify-center gap-x-12 xl:justify-between">
-        {/* LEFT COLUMN */}
-        {/* 1. Add "relative" here so the absolute child stays trapped inside */}
-        <div className="relative hidden w-xl xl:block">
-          {/* 2. absolute inset-0 forces this div to perfectly match the flex height dictated by your center column. overflow-hidden chops the rest off! */}
+        <div className="relative hidden w-lg xl:block xl:w-xl">
           <div className="absolute inset-0 overflow-hidden">
-            <CodeBackground code={cppSample} language="cpp" />
+            <CodeBackground code={sortingAlgorithmSampleCPP} language="cpp" />
           </div>
         </div>
 
-        {/* CENTER COLUMN (No changes) */}
         <div className="flex w-fit flex-col gap-y-4 overflow-visible xl:max-w-4xl">
           <Header />
           <main className="px-2 xl:px-0">
             <div className="flex min-h-[100svh] min-h-[calc(100vh-4rem)] flex-col">
               <div className="items flex flex-1 flex-col justify-center gap-y-12 text-center">
-                <h2 className="text-7xl font-extrabold xl:text-9xl">
+                <h2 className="text-7xl font-extrabold xl:text-7xl">
                   {t("hero.greeting")}
                 </h2>
-                <h2 className="text-7xl font-extrabold xl:text-9xl">Mikołaj</h2>
-                <h2 className="text-accent text-7xl font-extrabold transition-all duration-500 ease-in-out hover:scale-110 xl:text-9xl">
+                <h2 className="text-7xl font-extrabold xl:text-7xl">Mikołaj</h2>
+                <h2 className="text-accent text-7xl font-extrabold transition-all duration-500 ease-in-out hover:scale-110 xl:text-7xl">
                   Kawalec
                 </h2>
               </div>
-              <div className="flex flex-[0.25] flex-col items-center justify-center text-center text-3xl font-semibold xl:text-6xl">
+              <div className="flex flex-[0.25] flex-col items-center justify-center text-center text-3xl font-semibold xl:text-4xl">
                 <TypeAnimation
                   preRenderFirstString={true}
                   sequence={[
@@ -88,7 +86,7 @@ function App() {
                   href="#skills"
                   className="group transition-all duration-300 ease-in-out hover:scale-125"
                 >
-                  <ArrowDown size={96} className="group-hover:stroke-primary" />
+                  <ArrowDown size={64} className="group-hover:stroke-primary" />
                 </a>
               </div>
             </div>
@@ -138,8 +136,8 @@ function App() {
             <Separator />
             <div id="contact" className="flex flex-col items-center py-2">
               <LargeHeading>{t("sections.contact")}</LargeHeading>
-              <div className="flex min-h-32 w-full flex-col items-center justify-between gap-y-4 xl:flex-row">
-                <Contact Icon={Phone} text="+48-727-555-580" />
+              <div className="flex min-h-32 w-full flex-col items-center justify-between gap-y-4 text-sm xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-6 xl:text-base">
+                <Contact Icon={Phone} text="727-555-580" />
                 <Contact Icon={Mail} text="mikolaj.kawalec@gmail.com" />
                 <Contact
                   Icon={Github}
@@ -155,12 +153,16 @@ function App() {
           <Footer />
         </div>
 
-        {/* RIGHT COLUMN (No changes) */}
-        <div className="hidden w-xl xl:block">
+        <div className="relative hidden w-lg xl:block xl:w-xl">
+          <div className="absolute inset-0 overflow-hidden">
+            <CodeBackground code={googleTestSampleCPP} language="cpp" />
+          </div>
+        </div>
+        {/* <div className="hidden w-xl xl:block">
           <div className="sticky top-0 h-screen w-full">
             <ParticlesComponent />
           </div>
-        </div>
+        </div> */}
       </div>
     </ThemeProvider>
   );

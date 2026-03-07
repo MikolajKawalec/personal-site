@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Highlight, themes, Language } from "prism-react-renderer";
 
-export const cppSample = `//
+export const sortingAlgorithmSampleCPP = `//
 // Created by admin on 02.12.2024.
 //
 
@@ -403,6 +403,369 @@ std::string SortingAlgorithms::getMinimum<std::string>(std::vector<std::string> 
 
 
 `;
+
+export const googleTestSampleCPP = `#include "gtest/gtest.h"
+#include "ExampleClass.h"
+#include "SortingAlgorithms.h"
+
+
+#include <iostream>
+//region ExampleSuite
+
+TEST(ExampleSuite, ExampleTest) {
+    EXPECT_EQ(1, ExampleClass::doSomething());
+}
+
+//endregion
+
+//region BubbleSortTest
+
+TEST(BubbleSortTest, SortsIntegers) {
+    std::vector<int> vec = {5, 3, 8, 4, 2};
+    SortingAlgorithms::bubbleSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{2, 3, 4, 5, 8}));
+}
+
+TEST(BubbleSortTest, SortsDoubles) {
+    std::vector<double> vec = {5.5, 3.3, 8.8, 4.4, 2.2};
+    SortingAlgorithms::bubbleSort(vec);
+    EXPECT_EQ(vec, (std::vector<double>{2.2, 3.3, 4.4, 5.5, 8.8}));
+}
+
+TEST(BubbleSortTest, SortsEmptyVector) {
+    std::vector<int> vec = {};
+    SortingAlgorithms::bubbleSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{});
+}
+
+TEST(BubbleSortTest, SortsSingleElement) {
+    std::vector<int> vec = {1};
+    SortingAlgorithms::bubbleSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{1});
+}
+
+TEST(BubbleSortTest, SortsAlreadySorted) {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+    SortingAlgorithms::bubbleSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+TEST(BubbleSortTest, SortsReverseOrder) {
+    std::vector<int> vec = {5, 4, 3, 2, 1};
+    SortingAlgorithms::bubbleSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+// there is no reason why I actaully want to sort strings, but I can do it
+TEST(BubbleSortTest, SortsStrings) {
+    std::vector<std::string> vec = {"b", "c", "a", "f", "e"};
+    SortingAlgorithms::bubbleSort(vec);
+    EXPECT_EQ(vec, (std::vector<std::string>{"a", "b", "c", "e", "f"}));;
+}
+
+//endregion
+
+
+//region InsertionSortTest
+
+TEST(InsertionSortTest, SortsIntegers) {
+    std::vector<int> vec = {5, 3, 8, 4, 2};
+    SortingAlgorithms::insertionSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{2, 3, 4, 5, 8}));
+}
+
+TEST(InsertionSortTest, SortsIntegersExamQuestion) {
+    std::vector<int> vec = {5, 3, 1, 8, 7, 4, 2, 6};
+    // std::cout << "len: " << vec.size() << std::endl;
+
+    SortingAlgorithms::insertionSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5, 6, 7, 8}));
+}
+
+TEST(InsertionSortTest, SortsDoubles) {
+    std::vector<double> vec = {5.5, 3.3, 8.8, 4.4, 2.2};
+    SortingAlgorithms::insertionSort(vec);
+    EXPECT_EQ(vec, (std::vector<double>{2.2, 3.3, 4.4, 5.5, 8.8}));
+}
+
+TEST(InsertionSortTest, SortsEmptyVector) {
+    std::vector<int> vec = {};
+    SortingAlgorithms::insertionSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{});
+}
+
+TEST(InsertionSortTest, SortsSingleElement) {
+    std::vector<int> vec = {1};
+    SortingAlgorithms::insertionSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{1});
+}
+
+TEST(InsertionSortTest, SortsAlreadySorted) {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+    SortingAlgorithms::insertionSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+TEST(InsertionSortTest, SortsReverseOrder) {
+    std::vector<int> vec = {5, 4, 3, 2, 1};
+    SortingAlgorithms::insertionSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+//endregion
+
+//region SelectionSortTest
+
+TEST(SelectionSortTest, SortsIntegers) {
+    std::vector<int> vec = {5, 3, 8, 4, 2};
+    SortingAlgorithms::selectionSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{2, 3, 4, 5, 8}));
+}
+
+TEST(SelectionSortTest, SortsIntegersExamQuestion) {
+    std::vector<int> vec = {5, 3, 1, 8, 7, 4, 2, 6};
+    // std::cout << "len: " << vec.size() << std::endl;
+
+    SortingAlgorithms::selectionSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5, 6, 7, 8}));
+}
+
+
+TEST(SelectionSortTest, SortsDoubles) {
+    std::vector<double> vec = {5.5, 3.3, 8.8, 4.4, 2.2};
+    SortingAlgorithms::selectionSort(vec);
+    EXPECT_EQ(vec, (std::vector<double>{2.2, 3.3, 4.4, 5.5, 8.8}));
+}
+
+TEST(SelectionSortTest, SortsEmptyVector) {
+    std::vector<int> vec = {};
+    SortingAlgorithms::selectionSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{});
+}
+
+TEST(SelectionSortTest, SortsSingleElement) {
+    std::vector<int> vec = {1};
+    SortingAlgorithms::selectionSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{1});
+}
+
+TEST(SelectionSortTest, SortsAlreadySorted) {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+    SortingAlgorithms::selectionSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+TEST(SelectionSortTest, SortsReverseOrder) {
+    std::vector<int> vec = {5, 4, 3, 2, 1};
+    SortingAlgorithms::selectionSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+//endregion
+
+//region MergeSortTest
+
+TEST(MergeSortTest, SortsIntegers) {
+    std::vector<int> vec = {5, 3, 8, 4, 2};
+    SortingAlgorithms::mergeSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{2, 3, 4, 5, 8}));
+}
+
+TEST(MergeSortTest, SortsIntegersExamQuestion) {
+    std::vector<int> vec = {5, 3, 1, 8, 7, 4, 2, 6};
+    // std::cout << "len: " << vec.size() << std::endl;
+
+    SortingAlgorithms::mergeSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5, 6, 7, 8}));
+}
+
+TEST(MergeSortTest, SortsDoubles) {
+    std::vector<double> vec = {5.5, 3.3, 8.8, 4.4, 2.2};
+    SortingAlgorithms::mergeSort(vec);
+    EXPECT_EQ(vec, (std::vector<double>{2.2, 3.3, 4.4, 5.5, 8.8}));
+}
+
+TEST(MergeSortTest, SortsEmptyVector) {
+    std::vector<int> vec = {};
+    SortingAlgorithms::mergeSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{});
+}
+
+TEST(MergeSortTest, SortsSingleElement) {
+    std::vector<int> vec = {1};
+    SortingAlgorithms::mergeSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{1});
+}
+
+TEST(MergeSortTest, SortsAlreadySorted) {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+    SortingAlgorithms::mergeSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+TEST(MergeSortTest, SortsReverseOrder) {
+    std::vector<int> vec = {5, 4, 3, 2, 1};
+    SortingAlgorithms::mergeSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+
+//this is giant test case if want to make sure that ms are real
+/*
+TEST(MergeSortTest, SortsLargeVector) {
+    // Create a large vector with 1,000,000 elements in reverse order
+    std::vector<int> vec(1000000);
+    for (int i = 0; i < 1000000; ++i) {
+        vec[i] = 1000000 - i;
+    }
+
+    // Sort the vector using mergeSort
+    SortingAlgorithms::mergeSort(vec);
+
+    // Verify that the vector is sorted
+    for (int i = 0; i < 999999; ++i) {
+        EXPECT_LE(vec[i], vec[i + 1]);
+    }
+}
+*/
+
+//endregion
+
+//region PartitionTest
+TEST(PartitionTest, ParititonSortTest) {
+    std::vector<int> vec = {7, 8, 6, 4, 2, 1, 3, 5};
+    int index = SortingAlgorithms::partition(vec, 0, vec.size() - 1);
+    SortingAlgorithms::printArray(vec);
+    EXPECT_EQ(index, 6);
+}
+
+//endregion PartitionTest
+
+//region QuickSortTest
+
+TEST(QuickSortTest, SortsIntegers) {
+    std::vector<int> vec = {5, 3, 8, 4, 2};
+    SortingAlgorithms::quickSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{2, 3, 4, 5, 8}));
+}
+
+TEST(QuickSortTest, SortsDoubles) {
+    std::vector<double> vec = {5.5, 3.3, 8.8, 4.4, 2.2};
+    SortingAlgorithms::quickSort(vec);
+    EXPECT_EQ(vec, (std::vector<double>{2.2, 3.3, 4.4, 5.5, 8.8}));
+}
+
+TEST(QuickSortTest, SortsEmptyVector) {
+    std::vector<int> vec = {};
+    SortingAlgorithms::quickSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{});
+}
+
+TEST(QuickSortTest, SortsSingleElement) {
+    std::vector<int> vec = {1};
+    SortingAlgorithms::quickSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{1});
+}
+
+TEST(QuickSortTest, SortsAlreadySorted) {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+    SortingAlgorithms::quickSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+TEST(QuickSortTest, SortsReverseOrder) {
+    std::vector<int> vec = {5, 4, 3, 2, 1};
+    SortingAlgorithms::quickSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+//endregion
+
+//region CountingSortTest
+
+TEST(CountingSortTest, SortsIntegers) {
+    std::vector<int> vec = {5, 3, 8, 4, 2};
+    SortingAlgorithms::countingSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{2, 3, 4, 5, 8}));
+}
+
+TEST(CountingSortTest, SortsIntegersExamQuestion_Test) {
+    std::vector<int> vec = {1, 5, 2, 2, 6, 3, 4, 3, 5, 3, 3};
+    SortingAlgorithms::countingSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 2, 3, 3, 3, 3, 4, 5, 5, 6}));
+}
+
+TEST(CountingSortTest, SortsEmptyVector) {
+    std::vector<int> vec = {};
+    SortingAlgorithms::countingSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{});
+}
+
+TEST(CountingSortTest, SortsSingleElement) {
+    std::vector<int> vec = {1};
+    SortingAlgorithms::countingSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{1});
+}
+
+TEST(CountingSortTest, SortsAlreadySorted) {
+    std::vector<int> vec = {1, 2, 3, 4, 5};
+    SortingAlgorithms::countingSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+TEST(CountingSortTest, SortsReverseOrder) {
+    std::vector<int> vec = {5, 4, 3, 2, 1};
+    SortingAlgorithms::countingSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{1, 2, 3, 4, 5}));
+}
+
+//endregion
+
+//region RadixSortTest
+
+TEST(RadixSortTest, SortsIntegers) {
+    std::vector<int> vec = {123, 456, 789, 234, 567};
+    SortingAlgorithms::radixSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{123, 234, 456, 567, 789}));
+}
+
+TEST(RadixSortTest, SortsIntegersExamQuestion_test) {
+    std::vector<int> vec = {203, 103, 110, 210, 311, 213, 111, 211};
+    SortingAlgorithms::radixSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{103, 110, 111, 203, 210, 211, 213, 311}));
+}
+
+TEST(RadixSortTest, SortsIntegersWithDuplicates) {
+    std::vector<int> vec = {123, 456, 123, 234, 456};
+    SortingAlgorithms::radixSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{123, 123, 234, 456, 456}));
+}
+
+TEST(RadixSortTest, SortsEmptyVector) {
+    std::vector<int> vec = {};
+    SortingAlgorithms::radixSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{});
+}
+
+TEST(RadixSortTest, SortsSingleElement) {
+    std::vector<int> vec = {123};
+    SortingAlgorithms::radixSort(vec);
+    EXPECT_EQ(vec, std::vector<int>{123});
+}
+
+TEST(RadixSortTest, SortsAlreadySorted) {
+    std::vector<int> vec = {123, 234, 345, 456, 567};
+    SortingAlgorithms::radixSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{123, 234, 345, 456, 567}));
+}
+
+TEST(RadixSortTest, SortsReverseOrder) {
+    std::vector<int> vec = {567, 456, 345, 234, 123};
+    SortingAlgorithms::radixSort(vec);
+    EXPECT_EQ(vec, (std::vector<int>{123, 234, 345, 456, 567}));
+}
+
+//endregion`;
 
 interface CodeBackgroundProps {
   code: string;

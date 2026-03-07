@@ -16,9 +16,9 @@ const UniInformation: FC<UniInformationProps> = ({
 }) => {
   return (
     <div className={cn("flex w-full flex-col gap-y-6", className)} {...props}>
-      <h3 className="text-xl xl:text-5xl">{name}</h3>
-      <h4 className="text-lg text-primary xl:text-3xl">{studies}</h4>
-      <h4 className="text-base text-muted xl:text-xl">{years}</h4>
+      <h3 className="text-xl xl:text-3xl">{name}</h3>
+      <h4 className="text-primary text-lg xl:text-xl">{studies}</h4>
+      <h4 className="text-muted xl:text-md text-base">{years}</h4>
     </div>
   );
 };

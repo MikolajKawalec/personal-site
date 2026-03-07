@@ -22,7 +22,7 @@ const SkillBar: FC<SkillBarProps> = ({ level, className }) => {
     <Progress
       value={amount}
       label={t(getSkillLevelTranslationKey(level))}
-      className={cn("min-h-8 rounded-full border-2 bg-primary/20", className)}
+      className={cn("bg-primary/20 min-h-6 rounded-full border-2", className)}
     />
   );
 };
