@@ -13,7 +13,7 @@ export default function ParticlesComponent() {
     const updateThemeColor = () => {
       // Change "--foreground" to whatever variable you want the particles to use
       const rawColor = getComputedStyle(root)
-        .getPropertyValue("--accent")
+        .getPropertyValue("--primary")
         .trim();
       if (rawColor) {
         setThemeColor(`hsl(${rawColor})`);
@@ -66,8 +66,8 @@ export default function ParticlesComponent() {
           opacity: 0.4,
           width: W,
         },
-        move: { enable: true, speed: 0.6 },
-        number: { value: 100, density: { enable: true } },
+        move: { enable: false, speed: 0.01 },
+        number: { value: 250, density: { enable: true } },
         opacity: { value: 0.5 },
         shape: { type: "circle" },
         size: { value: { min: W, max: 3 * W } },

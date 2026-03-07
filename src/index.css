@@ -70,6 +70,17 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --tech-pattern-dot: hsl(var(--primary) / 0.2);
+    --tech-pattern-line-strong: hsl(var(--primary) / 0.35);
+    --tech-pattern-line-muted: hsl(var(--foreground) / 0.22);
+    --tech-pattern-line-accent: hsl(var(--accent) / 0.32);
+    --tech-pattern-node-accent: hsl(var(--primary) / 0.72);
+    --tech-pattern-node-neutral: hsl(var(--muted-foreground) / 0.42);
+    --tech-pattern-highlight: hsl(var(--secondary) / 0.6);
+    --tech-pattern-text: hsl(var(--foreground) / 0.24);
+    --tech-pattern-text-muted: hsl(var(--foreground) / 0.18);
+    --tech-pattern-crosshair: hsl(var(--primary) / 0.26);
+    --tech-pattern-block: hsl(var(--primary) / 0.24);
   }
   .dark {
     --background: 220, 86%, 11%;
@@ -96,6 +107,17 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --tech-pattern-dot: hsl(var(--primary) / 0.22);
+    --tech-pattern-line-strong: hsl(var(--primary) / 0.4);
+    --tech-pattern-line-muted: hsl(var(--foreground) / 0.22);
+    --tech-pattern-line-accent: hsl(var(--accent) / 0.34);
+    --tech-pattern-node-accent: hsl(var(--primary) / 0.76);
+    --tech-pattern-node-neutral: hsl(var(--muted-foreground) / 0.5);
+    --tech-pattern-highlight: hsl(var(--secondary) / 0.72);
+    --tech-pattern-text: hsl(var(--foreground) / 0.26);
+    --tech-pattern-text-muted: hsl(var(--foreground) / 0.18);
+    --tech-pattern-crosshair: hsl(var(--primary) / 0.3);
+    --tech-pattern-block: hsl(var(--primary) / 0.3);
   }
 }
 @layer base {
