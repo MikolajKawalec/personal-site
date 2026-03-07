@@ -1,6 +1,7 @@
 import { FC } from "react";
 import SkillBar from "./skill_bar";
-import { SkillLevel } from "@/lib/helpers";
+import { getSkillLevelTranslationKey, SkillLevel } from "@/lib/helpers";
+import { useTranslation } from "react-i18next";
 
 interface SkillWrapperProps {
   level: SkillLevel;
@@ -8,6 +9,8 @@ interface SkillWrapperProps {
 }
 
 const SkillWrapper: FC<SkillWrapperProps> = ({ skill, level }) => {
+  const { t } = useTranslation();
+
   return (
     <div>
       <div className="hidden w-full flex-row items-center justify-between gap-x-16 py-4 xl:flex">
@@ -17,7 +20,7 @@ const SkillWrapper: FC<SkillWrapperProps> = ({ skill, level }) => {
       </div>
       <div className="flex w-full flex-row items-center justify-between py-4 xl:hidden">
         <h4 className="text-xl font-semibold">{skill}</h4>
-        <h4 className="text-center">{SkillLevel[level]}</h4>
+        <h4 className="text-center">{t(getSkillLevelTranslationKey(level))}</h4>
       </div>
     </div>
   );
