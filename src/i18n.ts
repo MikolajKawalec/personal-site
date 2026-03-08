@@ -25,6 +25,9 @@ const resources = {
         education: "Education",
         experience: "Experience",
         contact: "Contact",
+        interests: "Interests",
+        trackRacer: "Track Racer",
+        plantSensor: "Plant Sensor",
       },
       theme: {
         toggle: "Toggle theme",
@@ -86,10 +89,32 @@ const resources = {
           math: "Math",
           physics: "Physics",
           econ: "Economics",
+          embeddedSystems: "Embedded",
+          espidf: "ESP-IDF",
+          esp32: "ESP32",
+          arduino: "Arduino",
         },
       },
       footer: {
         copyright: "Mikolaj Kawalec {{year}}",
+      },
+      interests: {
+        description:
+          "I enjoy cycling and following American football, especially the Seattle Seahawks—the dark mode color scheme of this site is inspired by the team’s colors. In gaming, I’m particularly drawn to RPGs, city builders, and racing games. And, for reasons I can’t fully explain, I also think seals are incredibly cute.",
+      },
+      trackRacer: {
+        description: [
+          "In my free time, I’m developing Track Racer, a multiplayer racing game that has become a valuable learning project for understanding real-world game development challenges.",
+          "Working on this project has given me hands-on experience with client–server architecture, multiplayer networking, and state replication. It has helped me understand what logic belongs on the server versus the client, and how synchronization affects gameplay.",
+          "The image above shows a demo level for a game mode where players compete to push objects off a table. Beyond programming, the project has also shown me how many different systems—gameplay logic, networking, UI, assets, and polish—come together to create a complete game. Because of that, it remains an ongoing work in progress.",
+        ],
+      },
+      plantSensor: {
+        description: [
+          "Recently, I started exploring electronics with the goal of building my own smart home devices.",
+          "This plant sensor measures soil moisture and temperature and publishes the data via MQTT, allowing it to be discovered and monitored in Home Assistant. The device is built around an ESP32 and programmed using the ESP-IDF framework.",
+          "The project introduced me to embedded development, hardware integration, and IoT communication patterns, and it represents my first step toward creating custom smart home hardware.",
+        ],
       },
     },
   },
@@ -115,6 +140,9 @@ const resources = {
         education: "Wykształcenie",
         experience: "Doświadczenie",
         contact: "Kontakt",
+        interests: "Zainteresowania",
+        trackRacer: "Track Racer",
+        plantSensor: "Plant Sensor",
       },
       theme: {
         toggle: "Przełącz motyw",
@@ -176,10 +204,32 @@ const resources = {
           math: "Matematyka",
           physics: "Fizyka",
           econ: "Ekonomia",
+          embeddedSystems: "Embedded",
+          espidf: "ESP-IDF",
+          esp32: "ESP32",
+          arduino: "Arduino",
         },
       },
       footer: {
         copyright: "Mikolaj Kawalec {{year}}",
+      },
+      interests: {
+        description:
+          "Lubię jazdę na rowerze i oglądanie futbolu amerykańskiego, szczególnie drużyny Seattle Seahawks — kolorystyka trybu ciemnego na tej stronie jest inspirowana barwami zespołu. W grach najbardziej lubię RPG, city buildery oraz wyścigi. I z powodów, których sam do końca nie potrafię wyjaśnić, uważam też, że foki są niesamowicie urocze.",
+      },
+      trackRacer: {
+        description: [
+          "W wolnym czasie tworzę Track Racer — wieloosobową grę wyścigową, która stała się dla mnie wartościowym projektem do nauki rzeczywistych wyzwań związanych z tworzeniem gier.",
+          "Praca nad tym projektem dała mi praktyczne doświadczenie z architekturą klient–serwer, sieciowością w grach multiplayer oraz replikacją stanu. Pomogła mi zrozumieć, jaka logika powinna znajdować się po stronie serwera, a jaka po stronie klienta, oraz jak synchronizacja wpływa na rozgrywkę.",
+          "Obraz powyżej przedstawia poziom demonstracyjny trybu gry, w którym gracze rywalizują, zrzucając obiekty ze stołu. Poza samym programowaniem projekt pokazał mi także, jak wiele różnych systemów — logika rozgrywki, sieciowość, interfejs użytkownika, assety i dopracowanie — składa się na gotową grę. Z tego powodu projekt wciąż pozostaje w trakcie rozwoju.",
+        ],
+      },
+      plantSensor: {
+        description: [
+          "Niedawno zacząłem interesować się elektroniką z myślą o tworzeniu własnych urządzeń do inteligentnego domu.",
+          "Ten czujnik roślin mierzy wilgotność gleby oraz temperaturę i publikuje dane przez MQTT, dzięki czemu może być wykrywany i monitorowany w Home Assistant. Urządzenie jest oparte na ESP32 i zaprogramowane z użyciem frameworka ESP-IDF.",
+          "Projekt wprowadził mnie w świat programowania systemów wbudowanych, integracji sprzętu oraz komunikacji w systemach IoT i jest moim pierwszym krokiem w stronę tworzenia własnego sprzętu smart home.",
+        ],
       },
     },
   },

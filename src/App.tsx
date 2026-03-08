@@ -14,12 +14,13 @@ import Contact from "./components/smaller_components/contact";
 import Footer from "./components/large_components/footer";
 import MinorSkillWrapper from "./components/large_components/minor_skill_wrapper";
 import { useTranslation } from "react-i18next";
-import ParticlesComponent from "./components/background/particles";
-
+// import ParticlesComponent from "./components/background/particles";
 import CodeBackground, {
   googleTestSampleCPP,
   sortingAlgorithmSampleCPP,
 } from "./components/background/code";
+import TrackRacer from "./assets/TrackRacer.jpg";
+import ESP32 from "./assets/esp32.jpg";
 
 function App() {
   const { t } = useTranslation();
@@ -41,11 +42,18 @@ function App() {
     },
   ];
 
+  const trackRacerDescription = t("trackRacer.description", {
+    returnObjects: true,
+  });
+  const plantSensorDescription = t("plantSensor.description", {
+    returnObjects: true,
+  });
+
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <div className="bg-background relative mx-auto flex min-h-screen flex-row justify-center gap-x-12 xl:justify-between">
         <div className="relative hidden w-lg xl:block xl:w-xl">
-          <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden opacity-60">
             <CodeBackground code={sortingAlgorithmSampleCPP} language="cpp" />
           </div>
         </div>
@@ -134,6 +142,58 @@ function App() {
               />
             </div>
             <Separator />
+            <div
+              id="interests"
+              className="flex flex-col items-center justify-between gap-y-2 py-2 lg:gap-y-6"
+            >
+              <LargeHeading>{t("sections.interests")}</LargeHeading>
+              <p className="max-w-3xl text-justify text-sm xl:text-base">
+                {t("interests.description")}
+              </p>
+            </div>
+            <Separator />
+            <div
+              id="track-racer"
+              className="flex flex-col items-center justify-between gap-y-2 py-2 lg:gap-y-6"
+            >
+              <LargeHeading>{t("sections.trackRacer")}</LargeHeading>
+              <img
+                src={TrackRacer}
+                alt="Track Racer"
+                className="w-full max-w-md rounded-lg shadow-lg"
+              />
+              {Array.isArray(trackRacerDescription) &&
+                trackRacerDescription.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="max-w-3xl text-justify text-sm xl:text-base"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+            </div>
+            <Separator />
+            <div
+              id="plant-sensor"
+              className="flex flex-col items-center justify-between gap-y-2 py-2 lg:gap-y-6"
+            >
+              <LargeHeading>{t("sections.plantSensor")}</LargeHeading>
+              <img
+                src={ESP32}
+                alt="Plant Sensor"
+                className="w-full max-w-md rounded-lg shadow-lg"
+              />
+              {Array.isArray(plantSensorDescription) &&
+                plantSensorDescription.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="max-w-3xl text-justify text-sm xl:text-base"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+            </div>
+            <Separator />
             <div id="contact" className="flex flex-col items-center py-2">
               <LargeHeading>{t("sections.contact")}</LargeHeading>
               <div className="flex min-h-32 w-full flex-col items-center justify-between gap-y-4 text-sm xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-6 xl:text-base">
@@ -146,15 +206,12 @@ function App() {
                 />
               </div>
             </div>
-            {/* <Separator /> */}
-            {/* <b>major fix 3</b> */}
-            {/* <ParticlesComponent /> */}
           </main>
           <Footer />
         </div>
 
         <div className="relative hidden w-lg xl:block xl:w-xl">
-          <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden opacity-60">
             <CodeBackground code={googleTestSampleCPP} language="cpp" />
           </div>
         </div>

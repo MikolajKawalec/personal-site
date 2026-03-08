@@ -37,6 +37,10 @@ export enum MinorSkill {
   Math = "math",
   Physics = "physics",
   Econ = "econ",
+  EmbeddedSystems = "embeddedSystems",
+  Espidf = "espidf",
+  Esp32 = "esp32",
+  Arduino = "arduino",
 }
 
 export const PRIMARY_SKILLS = [
@@ -61,6 +65,10 @@ export const MINOR_SKILLS = [
   MinorSkill.PostgresSql,
   MinorSkill.FastApi,
   MinorSkill.Unity,
+  MinorSkill.EmbeddedSystems,
+  MinorSkill.Espidf,
+  MinorSkill.Esp32,
+  MinorSkill.Arduino,
   MinorSkill.Flutter,
   MinorSkill.Dart,
   MinorSkill.Linux,
