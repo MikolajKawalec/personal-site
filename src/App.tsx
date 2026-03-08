@@ -7,136 +7,219 @@ import { ArrowDown, Github, Mail, Phone } from "lucide-react";
 import { Separator } from "./components/ui/separator";
 import LargeHeading from "./components/smaller_components/large_heading";
 
-import { SkillLevel } from "./lib/helpers";
+import { PRIMARY_SKILLS } from "./lib/helpers";
 import SkillWrapper from "./components/smaller_components/skill_wrapper";
 import UniInformation from "./components/smaller_components/uni_information";
 import Contact from "./components/smaller_components/contact";
 import Footer from "./components/large_components/footer";
 import MinorSkillWrapper from "./components/large_components/minor_skill_wrapper";
-// import ThemeChecker from './components/large_components/theme_checker';
+import { useTranslation } from "react-i18next";
+// import ParticlesComponent from "./components/background/particles";
+import CodeBackground, {
+  googleTestSampleCPP,
+  sortingAlgorithmSampleCPP,
+} from "./components/background/code";
+import TrackRacer from "./assets/TrackRacer.jpg";
+import ESP32 from "./assets/esp32.jpg";
 
 function App() {
+  const { t } = useTranslation();
+  const educationEntries = [
+    {
+      name: "Polsko-Japońska Akademia Technik Komputerowych",
+      studies: t("education.pjatk.studies"),
+      years: "2023-2026",
+    },
+    {
+      name: "Szkoła Glówna Handlowa",
+      studies: t("education.sgh.studies"),
+      years: "2023-2026",
+    },
+    {
+      name: "University of Toronto",
+      studies: t("education.uoft.studies"),
+      years: "2021-2022",
+    },
+  ];
+
+  const trackRacerDescription = t("trackRacer.description", {
+    returnObjects: true,
+  });
+  const plantSensorDescription = t("plantSensor.description", {
+    returnObjects: true,
+  });
+
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="mx-auto flex min-h-[calc(100vh)] w-fit flex-col gap-y-4 bg-background xl:max-w-4xl">
-        <Header />
-        <div className="px-2 xl:px-0">
-          <div className="flex min-h-[100svh] min-h-[calc(100vh-4rem)] flex-col">
-            <div className="items flex flex-1 flex-col justify-center gap-y-12 text-center">
-              <h2 className="text-7xl font-extrabold xl:text-9xl">Hi I'm</h2>
-              <h2 className="text-7xl font-extrabold xl:text-9xl">Mikołaj</h2>
-              <h2 className="text-7xl font-extrabold text-accent transition-all duration-500 ease-in-out hover:scale-110 xl:text-9xl">
-                Kawalec
-              </h2>
-            </div>
-            <div className="flex flex-[0.25] flex-col items-center justify-center text-center text-3xl font-semibold xl:text-6xl">
-              <TypeAnimation
-                preRenderFirstString={true}
-                sequence={[
-                  1000,
-                  "Game Developer",
-                  1000,
-                  "Frontend Developer",
-                  1000,
-                  "Backend Developer",
-                  1000,
-                  "Student",
-                  1000,
-                ]}
-                speed={50}
-                repeat={Infinity}
-              />
-            </div>
-            <div className="flex flex-[0.25] flex-col items-center justify-center">
-              <a
-                href="#skills"
-                className="group transition-all duration-300 ease-in-out hover:scale-125"
-              >
-                <ArrowDown size={96} className="group-hover:stroke-primary" />
-              </a>
-            </div>
+      <div className="bg-background relative mx-auto flex min-h-screen flex-row justify-center gap-x-12 xl:justify-between">
+        <div className="relative hidden w-lg xl:block xl:w-xl">
+          <div className="absolute inset-0 overflow-hidden opacity-60">
+            <CodeBackground code={sortingAlgorithmSampleCPP} language="cpp" />
           </div>
-          {/* separator does not seem to work */}
-          <Separator />
-          <div
-            id="skills"
-            className="flex min-h-[100svh] min-h-[calc(100vh-4rem)] flex-col items-center justify-between py-2"
-          >
-            <LargeHeading>Skills</LargeHeading>
-            <div className="w-full py-10">
-              <SkillWrapper skill="C++" level={SkillLevel["Semi-Advanced"]} />
-              <SkillWrapper
-                skill="Unreal Engine"
-                level={SkillLevel["Semi-Advanced"]}
-              />
-              <SkillWrapper
-                skill="Typescript"
-                level={SkillLevel["Semi-Advanced"]}
-              />
-              <SkillWrapper skill="React" level={SkillLevel["Semi-Advanced"]} />
-              <SkillWrapper
-                skill="Next.js"
-                level={SkillLevel["Semi-Advanced"]}
-              />
-              <SkillWrapper skill="Java" level={SkillLevel["Semi-Advanced"]} />
-              <SkillWrapper
-                skill="Python"
-                level={SkillLevel["Semi-Advanced"]}
-              />
-              <SkillWrapper skill="REST API" level={SkillLevel.Beginner} />
-            </div>
-            <MinorSkillWrapper />
-          </div>
-          <Separator />
-          <div
-            id="education"
-            className="flex min-h-[100svh] min-h-[calc(100vh-4rem)] flex-col items-center justify-between py-2"
-          >
-            <LargeHeading>Education</LargeHeading>
-            <UniInformation
-              name="Polsko-Japońska Akademia Technik Komputerowych"
-              studies="Computer Science"
-              years="2023-2026"
-            />
-            <UniInformation
-              name="Szkoła Glówna Handlowa"
-              studies="Ekonomia"
-              years="2023-2026"
-            />
-            <UniInformation
-              name="University of Toronto"
-              studies="Mathematics and Computer Science"
-              years="2021-2022"
-            />
-          </div>
-          <Separator />
-          <div id="experience" className="flex flex-col items-center py-2">
-            <LargeHeading>Experience</LargeHeading>
-            <UniInformation
-              name="Samsung Reasearch and Development"
-              studies="ETS intern"
-              years="2023"
-              className="mt-10"
-            />
-          </div>
-          <Separator />
-          <div id="contact" className="flex flex-col items-center py-2">
-            <LargeHeading>Contact</LargeHeading>
-            <div className="flex min-h-32 w-full flex-col items-center justify-between gap-y-4 xl:flex-row">
-              <Contact Icon={Phone} text="+48-727-555-580" />
-              <Contact Icon={Mail} text="mikolaj.kawalec@gmail.com" />
-              <Contact
-                Icon={Github}
-                text="MikolajKawalec"
-                linkTo="https://github.com/MikolajKawalec"
-              />
-            </div>
-          </div>
-          {/* <Separator />
-          <b>major fix 3</b> */}
-          {/* <ThemeChecker /> */}
         </div>
-        <Footer />
+
+        <div className="flex w-fit flex-col gap-y-4 overflow-visible xl:max-w-4xl">
+          <Header />
+          <main className="px-2 xl:px-0">
+            <div className="flex min-h-[100svh] min-h-[calc(100vh-4rem)] flex-col">
+              <div className="items flex flex-1 flex-col justify-center gap-y-12 text-center">
+                <h2 className="text-7xl font-extrabold xl:text-7xl">
+                  {t("hero.greeting")}
+                </h2>
+                <h2 className="text-7xl font-extrabold xl:text-7xl">Mikołaj</h2>
+                <h2 className="text-accent text-7xl font-extrabold transition-all duration-500 ease-in-out hover:scale-110 xl:text-7xl">
+                  Kawalec
+                </h2>
+              </div>
+              <div className="flex flex-[0.25] flex-col items-center justify-center text-center text-3xl font-semibold xl:text-4xl">
+                <TypeAnimation
+                  preRenderFirstString={true}
+                  sequence={[
+                    1000,
+                    t("hero.roles.gameDeveloper"),
+                    1000,
+                    t("hero.roles.frontendDeveloper"),
+                    1000,
+                    t("hero.roles.backendDeveloper"),
+                    1000,
+                    t("hero.roles.student"),
+                    1000,
+                  ]}
+                  speed={50}
+                  repeat={Infinity}
+                />
+              </div>
+              <div className="flex flex-[0.25] flex-col items-center justify-center">
+                <a
+                  href="#skills"
+                  className="group transition-all duration-300 ease-in-out hover:scale-125"
+                >
+                  <ArrowDown size={64} className="group-hover:stroke-primary" />
+                </a>
+              </div>
+            </div>
+            {/* separator does not seem to work */}
+            <Separator />
+            <div
+              id="skills"
+              className="flex flex-col items-center justify-between py-2"
+            >
+              <LargeHeading>{t("sections.skills")}</LargeHeading>
+              <div className="w-full py-10">
+                {PRIMARY_SKILLS.map(({ skill, level }) => (
+                  <SkillWrapper
+                    key={skill}
+                    skill={t(`skills.primary.${skill}`)}
+                    level={level}
+                  />
+                ))}
+              </div>
+              <MinorSkillWrapper />
+            </div>
+            <Separator />
+            <div
+              id="education"
+              className="flex flex-col items-center justify-between gap-y-6 py-2 lg:gap-y-12"
+            >
+              <LargeHeading>{t("sections.education")}</LargeHeading>
+              {educationEntries.map(({ name, studies, years }) => (
+                <UniInformation
+                  key={name}
+                  name={name}
+                  studies={studies}
+                  years={years}
+                />
+              ))}
+            </div>
+            <Separator />
+            <div id="experience" className="flex flex-col items-center py-2">
+              <LargeHeading>{t("sections.experience")}</LargeHeading>
+              <UniInformation
+                name="Samsung Reasearch and Development"
+                studies={t("experience.samsung.role")}
+                years="2023"
+                className="mt-10"
+              />
+            </div>
+            <Separator />
+            <div
+              id="interests"
+              className="flex flex-col items-center justify-between gap-y-2 py-2 lg:gap-y-6"
+            >
+              <LargeHeading>{t("sections.interests")}</LargeHeading>
+              <p className="max-w-3xl text-justify text-sm xl:text-base">
+                {t("interests.description")}
+              </p>
+            </div>
+            <Separator />
+            <div
+              id="track-racer"
+              className="flex flex-col items-center justify-between gap-y-2 py-2 lg:gap-y-6"
+            >
+              <LargeHeading>{t("sections.trackRacer")}</LargeHeading>
+              <img
+                src={TrackRacer}
+                alt="Track Racer"
+                className="w-full max-w-md rounded-lg shadow-lg"
+              />
+              {Array.isArray(trackRacerDescription) &&
+                trackRacerDescription.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="max-w-3xl text-justify text-sm xl:text-base"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+            </div>
+            <Separator />
+            <div
+              id="plant-sensor"
+              className="flex flex-col items-center justify-between gap-y-2 py-2 lg:gap-y-6"
+            >
+              <LargeHeading>{t("sections.plantSensor")}</LargeHeading>
+              <img
+                src={ESP32}
+                alt="Plant Sensor"
+                className="w-full max-w-md rounded-lg shadow-lg"
+              />
+              {Array.isArray(plantSensorDescription) &&
+                plantSensorDescription.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className="max-w-3xl text-justify text-sm xl:text-base"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+            </div>
+            <Separator />
+            <div id="contact" className="flex flex-col items-center py-2">
+              <LargeHeading>{t("sections.contact")}</LargeHeading>
+              <div className="flex min-h-32 w-full flex-col items-center justify-between gap-y-4 text-sm xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-6 xl:text-base">
+                <Contact Icon={Phone} text="727-555-580" />
+                <Contact Icon={Mail} text="mikolaj.kawalec@gmail.com" />
+                <Contact
+                  Icon={Github}
+                  text="MikolajKawalec"
+                  linkTo="https://github.com/MikolajKawalec"
+                />
+              </div>
+            </div>
+          </main>
+          <Footer />
+        </div>
+
+        <div className="relative hidden w-lg xl:block xl:w-xl">
+          <div className="absolute inset-0 overflow-hidden opacity-60">
+            <CodeBackground code={googleTestSampleCPP} language="cpp" />
+          </div>
+        </div>
+        {/* <div className="hidden w-xl xl:block">
+          <div className="sticky top-0 h-screen w-full">
+            <ParticlesComponent />
+          </div>
+        </div> */}
       </div>
     </ThemeProvider>
   );
