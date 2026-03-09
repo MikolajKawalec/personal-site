@@ -19,7 +19,7 @@ Find the source code: [GitHub Repository](https://github.com/MikolajKawalec/pers
 
 ## 📸 Preview
 
-[Live Demo](https://mikolajkawalec.github.io/)
+[Live Demo](https://mikolajkawalec.github.io/personal-site/)
 
 ## 📬 Contact
 
